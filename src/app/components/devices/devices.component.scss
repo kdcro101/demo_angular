@@ -1,0 +1,28 @@
+@import "vars";
+
+.wrapper {
+    // padding: 8px;
+    padding-bottom: 16px;
+    background-color: transparent;
+    table {
+        width: 100%;
+    }
+    .filter {
+        // padding-top: 16px;
+        padding-left: 8px;
+        padding-right: 8px;
+        .mat-icon.filter-icon {
+            margin-right: 8px;
+        }
+        .mat-icon-button.reset{
+            margin-left:8px
+        }
+    }
+
+    .mat-column-id {
+        width: 10%;
+    }
+    .mat-column-name {
+        width: 50%;
+    }
+}

@@ -1,0 +1,13 @@
+<h1 mat-dialog-title *ngIf="data.create">New task</h1>
+<h1 mat-dialog-title *ngIf="!data.create">Update task</h1>
+<div mat-dialog-content>
+    <p>What is a description of the task?</p>
+    <mat-form-field>
+        <mat-label>Task description</mat-label>
+        <input matInput [(ngModel)]="data.name">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" color="primary">Cancel</button>
+    <button mat-raised-button [mat-dialog-close]="data.name" color="accent" cdkFocusInitial>Ok</button>
+</div>

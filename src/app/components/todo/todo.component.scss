@@ -1,0 +1,37 @@
+@import "vars";
+:host {
+    .fab {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 100;
+        padding-right: 16px;
+        padding-bottom: 16px;
+    }
+}
+.started {
+    color: mat-color($yellow, 600);
+}
+.todo {
+    color: mat-color($blue, 600);
+}
+.done {
+    color: mat-color($green, 600);
+}
+.wrapper {
+    // padding: 8px;
+    padding-bottom: 16px;
+    background-color: transparent;
+    .scroller {
+        .mat-card {
+            margin: 8px;
+        }
+        overflow: auto;
+        padding-bottom: 64px;
+        .mat-list-item {
+            .mat-icon.label {
+                margin-right: 16px;
+            }
+        }
+    }
+}

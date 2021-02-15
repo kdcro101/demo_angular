@@ -1,0 +1,20 @@
+{
+    "todos": [
+        {
+            "name": "Walk the dog",
+            "status": "todo"
+        },
+        {
+            "name": "Pay the bills",
+            "status": "done"
+        },
+        {
+            "name": "Buy groceries",
+            "status": "todo"
+        },
+        {
+            "name": "Build model plane",
+            "status": "started"
+        }
+    ]
+}

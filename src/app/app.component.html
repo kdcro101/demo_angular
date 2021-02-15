@@ -1,0 +1,30 @@
+<mat-drawer-container class="example-container" autosize fxFlexFill>
+    <mat-drawer #drawer class="dark-theme main-drawer mat-app-background"  [mode]="drawerMode">
+        <div class="">
+            <h2>Menu</h2>
+            <mat-selection-list #shoes [multiple]="false">
+                <mat-list-option uiSref="question-1" (click)="toggleDrawer()" uiSrefActiveEq="active">Devices
+                </mat-list-option>
+                <mat-list-option uiSref="question-2" (click)="toggleDrawer()" uiSrefActiveEq="active">To do
+                </mat-list-option>
+                <mat-list-option uiSref="question-3" (click)="toggleDrawer()" uiSrefActiveEq="active">Movies
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+    </mat-drawer>
+    <div class="sidenav-content" fxFlexFill fxLayout="column">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
+                    aria-label="Example icon-button with menu icon">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <span>{{title}}</span>
+                <span class="example-spacer"></span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <div fxLayout="row" fxLayoutAlign="start stretch" fxFlex class="outlet">
+            <ui-view></ui-view>
+        </div>
+    </div>
+</mat-drawer-container>

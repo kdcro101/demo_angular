@@ -1,0 +1,46 @@
+<div class="fab">
+    <button mat-fab color="accent" (click)="openCreateDialog()">
+        <mat-icon>add_task</mat-icon>
+    </button>
+</div>
+<div class="wrapper" fxLayout="row" fxLayoutAlign="start stretch">
+    <div class="scroller" fxFlex>
+        <mat-card>
+            <mat-list>
+                <mat-list-item *ngFor="let item of todos">
+                    <mat-icon class="label" [ngClass]="item.status">label</mat-icon>
+                    {{item.name}}
+                    <span fxFlex></span>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" [matMenuTriggerData]="{name: item.name}">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                </mat-list-item>
+            </mat-list>
+            <mat-menu #menu="matMenu">
+                <ng-template matMenuContent let-name="name">
+                    <button mat-menu-item [matMenuTriggerFor]="statuses" [matMenuTriggerData]="{name: name}">
+                        <mat-icon>label</mat-icon>Change status</button>
+                    <mat-divider></mat-divider>
+                    <button mat-menu-item (click)="deleteTask(name)">
+                        <mat-icon>delete_forever</mat-icon>
+                        Delete</button>
+                    <mat-divider></mat-divider>
+                    <button mat-menu-item (click)="openRenameDialog(name)">
+                        <mat-icon>edit</mat-icon>
+                        Rename</button>
+                </ng-template>
+            </mat-menu>
+            <mat-menu #statuses="matMenu">
+                <ng-template matMenuContent let-name="name">
+                    <button mat-menu-item (click)="updateStatus(name,'todo')">
+                        <mat-icon class="label todo">label</mat-icon>To do
+                    </button>
+                    <button mat-menu-item (click)="updateStatus(name,'started')">
+                        <mat-icon class="label started">label</mat-icon>Started</button>
+                    <button mat-menu-item (click)="updateStatus(name,'done')">
+                        <mat-icon class="label done">label</mat-icon>Done</button>
+                </ng-template>
+            </mat-menu>
+        </mat-card>
+    </div>
+</div>
