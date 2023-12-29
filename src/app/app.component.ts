@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { Title } from "@angular/platform-browser";
-import { StateService, Transition, TransitionService } from '@uirouter/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
 import { MatDrawer, MatDrawerMode } from '@angular/material/sidenav';
@@ -19,16 +18,11 @@ export class AppComponent implements AfterViewInit {
     drawerMode: MatDrawerMode = "over"
     drawerIgnoreToggle: boolean = false
 
-    constructor(public stateService: StateService, private titleService: Title, private transition: TransitionService, private mediaObserver: MediaObserver) {
-        this.transition.onSuccess({}, this.setTitle)
+    constructor(private titleService: Title, private mediaObserver: MediaObserver) {
+        // this.transition.onSuccess({}, this.setTitle)
 
     }
-    setTitle = (currentTransition: Transition) => {
-        const params = currentTransition.params()
-        this.titleService.setTitle(params.title)
-        this.title = params.title
 
-    }
     ngAfterViewInit() {
         this.mediaWatcher = this.mediaObserver.asObservable().subscribe((change: MediaChange[]) => {
 

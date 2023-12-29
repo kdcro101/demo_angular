@@ -7,7 +7,6 @@ import { MatDrawer, MatDrawerContainer, MatDrawerContent } from '@angular/materi
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { UIRouterModule } from '@uirouter/angular';
 import { AppComponent } from './app.component';
 import { DevicesComponent } from './components/devices/devices.component';
 import { MoviesComponent } from './components/movies/movies.component';
@@ -45,7 +44,6 @@ describe('AppComponent', () => {
             imports: [
                 RouterTestingModule,
                 NoopAnimationsModule,
-                UIRouterModule.forRoot({ states: routes, useHash: false }),
             ],
             declarations: [
                 AppComponent,
@@ -61,9 +59,9 @@ describe('AppComponent', () => {
                 MatIcon,
                 MatRipple,
                 MatDrawerContent,
-                
- 
-                
+
+
+
             ], providers: [
                 { provide: MediaObserver, useClass: MediaObserverMock },
             ]
@@ -211,5 +209,5 @@ describe('AppComponent', () => {
 
 
     });
- 
+
 });
